@@ -167,9 +167,9 @@ with gr.Blocks(theme=gr.themes.Soft(font=[gr.themes.GoogleFont("Plus Jakarta San
                             cache_examples=False,
                         )
 
-                tab_selection = gr.Textbox(visible=False)
-                tab_image.select(lambda: "Image", None, tab_selection)
-                tab_video.select(lambda: "Video", None, tab_selection)
+            tab_selection = gr.Textbox(visible=False)
+            tab_image.select(lambda: "Image", None, tab_selection)
+            tab_video.select(lambda: "Video", None, tab_selection)
             with gr.Accordion(open=True, label="Cropping Options for Source Image or Video"):
                 with gr.Row():
                     flag_do_crop_input = gr.Checkbox(value=True, label="do crop (source)")
@@ -225,10 +225,10 @@ with gr.Blocks(theme=gr.themes.Soft(font=[gr.themes.GoogleFont("Plus Jakarta San
                             cache_examples=False,
                         )
 
-                v_tab_selection = gr.Textbox(visible=False)
-                v_tab_video.select(lambda: "Video", None, v_tab_selection)
-                v_tab_image.select(lambda: "Image", None, v_tab_selection)
-                v_tab_pickle.select(lambda: "Pickle", None, v_tab_selection)
+            v_tab_selection = gr.Textbox(visible=False)
+            v_tab_video.select(lambda: "Video", None, v_tab_selection)
+            v_tab_image.select(lambda: "Image", None, v_tab_selection)
+            v_tab_pickle.select(lambda: "Pickle", None, v_tab_selection)
             # with gr.Accordion(open=False, label="Animation Instructions"):
                 # gr.Markdown(load_description("assets/gradio/gradio_description_animation.md"))
             with gr.Accordion(open=True, label="Cropping Options for Driving Video"):
@@ -489,5 +489,6 @@ with gr.Blocks(theme=gr.themes.Soft(font=[gr.themes.GoogleFont("Plus Jakarta San
 demo.launch(
     server_port=args.server_port,
     share=args.share,
-    server_name=args.server_name
+    server_name=args.server_name,
+    inbrowser=args.inbrowser
 )

@@ -148,9 +148,9 @@ with gr.Blocks(theme=gr.themes.Soft(font=[gr.themes.GoogleFont("Plus Jakarta San
                             cache_examples=False,
                         )
 
-                    tab_selection = gr.Textbox(visible=False)
-                    tab_pickle.select(lambda: "Pickle", None, tab_selection)
-                    tab_video.select(lambda: "Video", None, tab_selection)
+            tab_selection = gr.Textbox(visible=False)
+            tab_pickle.select(lambda: "Pickle", None, tab_selection)
+            tab_video.select(lambda: "Video", None, tab_selection)
             with gr.Accordion(open=True, label="Cropping Options for Driving Video"):
                 with gr.Row():
                     flag_crop_driving_video_input = gr.Checkbox(value=False, label="do crop (driving)")
@@ -245,5 +245,6 @@ with gr.Blocks(theme=gr.themes.Soft(font=[gr.themes.GoogleFont("Plus Jakarta San
 demo.launch(
     server_port=args.server_port,
     share=args.share,
-    server_name=args.server_name
+    server_name=args.server_name,
+    inbrowser=args.inbrowser
 )
